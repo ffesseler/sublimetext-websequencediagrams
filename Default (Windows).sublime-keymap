@@ -1,0 +1,7 @@
+[
+    {
+        "keys": ["ctrl+alt+wd"],
+        "__doc__": "Preview WebSequenceDiagrams",
+        "command": "websequencediagrams"
+    }
+]
