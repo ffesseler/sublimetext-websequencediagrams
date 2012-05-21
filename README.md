@@ -1,3 +1,5 @@
+[![endorse](http://api.coderwall.com/ffesseler/endorse.png)](http://coderwall.com/ffesseler) 
+
 WebSequenceDiagrams support for Sublime Text 2
 ==============================================
 
