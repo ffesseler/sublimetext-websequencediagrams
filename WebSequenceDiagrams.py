@@ -38,13 +38,11 @@ class WebsequencediagramsListener(sublime_plugin.EventListener):
 
 class WebsequencediagramsCommand(sublime_plugin.TextCommand):
 	def run(self, edit, target = 'browser'):
-		region = sublime.Region(0, self.view.size())
-		enc = self.view.encoding();
+		region = self.view.visible_region()
 		contents = self.view.substr(region)
 		style = "qsd"
-		text = contents
 		pngFile = getTempPreviewPath(self.view)
-		if getSequenceDiagram(text, pngFile, style):
+		if getSequenceDiagram(contents, pngFile, style):
 			desktop.open(pngFile)
 
 	
