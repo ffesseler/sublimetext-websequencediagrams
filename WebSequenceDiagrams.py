@@ -40,9 +40,13 @@ class WebsequencediagramsCommand(sublime_plugin.TextCommand):
 	def run(self, edit, target = 'browser'):
 		region = self.view.visible_region()
 		contents = self.view.substr(region)
+		if not "participant" in contents:
+			region = self.view.find('(participant .*\n)+', 0)
+			participants = self.view.substr(region)
+			contents = participants + contents
 		style = "qsd"
 		pngFile = getTempPreviewPath(self.view)
 		if getSequenceDiagram(contents, pngFile, style):
 			desktop.open(pngFile)
 
-	
+
